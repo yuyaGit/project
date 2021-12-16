@@ -18,7 +18,7 @@ if (!isset($_SESSION["login"])) {
     print "<br><br>";
 }
 
-$outputs = shell_exec("sh ./shell/scan.sh"); //シェルスクリプトを実行
+$outputs = shell_exec("sh scan.sh"); //シェルスクリプトを実行
 
 $output = explode("Nmap", $outputs); //Nmapで区切って配列に格納
 

@@ -10,9 +10,11 @@ if (!isset($_SESSION["login"])) {
     print $_SESSION["name"] . "さんログイン中";
     print "<br><br>";
 }
+?>
+<?php
 
 
-require_once("dbc.php");
+require_once("./db/dbc.php");
 
 $result = $_POST; //formで入力したデータを取得
 

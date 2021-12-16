@@ -41,11 +41,13 @@ print "</pre>";  */
     <?php $contents = $dbh->query("SELECT * FROM iotdevice"); ?>
     <?php foreach ($contents as $row) : ?>
         <?php echo "機器名:"  . $row["device"]  . "<br>" . "IPアドレス" . ":" . $row["ip"] . "<br>" . "MACアドレス:" . $row["mac"] . "<br>" . "登録日時:" . $row["time"] . "<br>"; ?>
+        <a href="./shell/hydra.php?ip=<?php echo $row["ip"] ?>">診断</a><br>
+        <a href="delete.php?ip=<?php echo $row["ip"] ?>">削除</a><br>
         <hr>
     <?php endforeach ?>
 
-    <a href="form.html">機器を登録する</a><br>
-    <a href="port.php">LAN内のデバイスをスキャンする</a><br>
+    <a href="form.php">機器を登録する</a><br>
+    <a href="./shell/port.php">LAN内のデバイスをスキャンする</a><br>
     <a href="./user_login/user_logout.php">ログアウトする</a>
 </body>
 
